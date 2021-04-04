@@ -1,0 +1,63 @@
+.navigation-container {
+  background-color: #34495e;
+  height: 50px;
+  padding: 8px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: #fff;
+
+  .title {
+    flex: 0.3;
+    font-size: 2rem;
+  }
+
+  .title > h4 {
+    margin-left: 2rem;
+  }
+
+  .search-box {
+    flex: 0.4;
+    background-color: #425161;
+    text-align: center;
+    display: flex;
+    padding: 3px 5px;
+    color: #fff;
+    border: 1px solid gray;
+  }
+
+  .search-box > input {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    min-width: 35vw;
+    outline: none;
+    color: #fff;
+  }
+
+  .upload {
+    font-size: 32px;
+    flex: 0.15;
+  }
+
+  .upload > * {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .account {
+    font-size: 32px;
+    flex: 0.15;
+    justify-content: end;
+  }
+
+  .account > * {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

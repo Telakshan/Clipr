@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
+import Info from "./Components/Info/Info";
+import Register from "./Components/Register/Register";
+import Login from "./Components/Login/Login";
 import Button from "./Components/Button/Button";
 
 function App() {
@@ -36,7 +39,11 @@ function App() {
     >
       <Router>
         <Navbar />
-        <h1>Homepage</h1>
+        <Switch>
+          <Route exact path="/" component={Info} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+        </Switch>
       </Router>
     </AuthContext.Provider>
   );

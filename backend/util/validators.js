@@ -29,6 +29,8 @@ module.exports.validateRegisterInput = (
 };
 
 module.exports.validateLoginInput = (email, password) => {
+  const errors = {};
+
   if (email.trim() === "") {
     errors.email = "Email must not be empty";
   } else if (!validator.isEmail(email)) {
@@ -36,7 +38,9 @@ module.exports.validateLoginInput = (email, password) => {
   }
   if (password.length < 6) {
     errors.password = "Password must be at least 6 characters";
-  } else if (password !== confirmPassword) {
-    errors.password = "Passwords must match";
   }
+  return {
+    errors,
+    valid: Object.keys(errors).length < 1,
+  };
 };

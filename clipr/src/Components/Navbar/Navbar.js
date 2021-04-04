@@ -16,7 +16,7 @@ const Navbar = () => {
       </div>
       <div className="search-box">
         <input placeholder="Search..."></input>
-        <MdSearch />
+        <MdSearch className='search-icon'/>
       </div>
       <MdVideoCall className="upload" />
       <MdAccountCircle

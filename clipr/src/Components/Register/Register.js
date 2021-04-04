@@ -60,7 +60,7 @@ const Register = () => {
       {isLoading ? <Loading /> : null}
       <MdAccountCircle className="user-icon" />
       <h2 className="title">Sign up</h2>
-      {error && (
+      {/* {error && (
         <Modal
           // className="small-modal"
           show={setError}
@@ -70,7 +70,7 @@ const Register = () => {
         >
           Cannot Register. Please try again
         </Modal>
-      )}
+      )} */}
       {/* <form onSubmit={authSubmit}> */}
       <form>
         <Input

@@ -61,9 +61,9 @@ const Login = () => {
   //   setError(false);
   // };
 
-  if (auth.isLoggedIn) {
-    return <Chat />;
-  }
+  // if (auth.isLoggedIn) {
+  //   return <Chat />;
+  // }
 
   return (
     <div className="log-in">
@@ -80,8 +80,8 @@ const Login = () => {
         >
           Cannot log you in. Please try again
         </Modal>
-      )} */}
-      <form onSubmit={submitLogin}>
+      )} onSubmit={submitLogin}*/}
+      <form >
         <Input
           name="email"
           value={email}

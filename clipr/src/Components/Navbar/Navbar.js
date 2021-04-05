@@ -14,13 +14,12 @@ const Navbar = () => {
   const handleScroll = () => {
     const offset = window.pageYOffset;
 
-    offset > 20 ? setScrolled(true) : setScrolled(false);
-
+    offset > 100 ? setScrolled(true) : setScrolled(false);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  })
+    window.addEventListener("scroll", handleScroll);
+  });
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, false);
@@ -42,7 +41,7 @@ const Navbar = () => {
       ref={wrapper}
     >
       <div className="title">
-        <Link to="/homepage">
+        <Link to="/home">
           <h4>Clipr</h4>
         </Link>
       </div>
@@ -50,7 +49,12 @@ const Navbar = () => {
         <input placeholder="Search..."></input>
         <MdSearch className="search-icon" />
       </div>
-      <MdVideoCall className="upload" />
+      <div className="upload">
+        <Link to="/upload">
+          <MdVideoCall />
+        </Link>
+      </div>
+
       <MdAccountCircle
         className="account"
         onClick={() => setDropDown(!dropDown)}

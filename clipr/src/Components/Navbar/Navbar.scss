@@ -14,10 +14,8 @@
   .title {
     flex: 0.3;
     font-size: 2rem;
-  }
 
-  .title {
-    h4 {
+     h4 {
       margin-left: 2rem;
       cursor: pointer;
     }
@@ -36,6 +34,15 @@
     color: #fff;
     border: 1px solid gray;
 
+    input {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      min-width: 35vw;
+      outline: none;
+      color: #fff;
+    }
+
     .search-icon {
       cursor: pointer;
       &:hover {
@@ -44,25 +51,16 @@
     }
   }
 
-  .search-box > input {
-    background-color: transparent;
-    border: none;
-    text-align: center;
-    min-width: 35vw;
-    outline: none;
-    color: #fff;
-  }
-
   .upload {
     font-size: 32px;
     flex: 0.15;
-  }
+    text-align: center;
+    * {
+      cursor: pointer;
 
-  .upload > * {
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.7;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -70,14 +68,16 @@
     font-size: 32px;
     flex: 0.15;
     justify-content: end;
-  }
 
-  .account > * {
-    cursor: pointer;
-    &:hover {
-      opacity: 0.7;
+    * {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
+
+  
 }
 
 .scrolled {

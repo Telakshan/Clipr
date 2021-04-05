@@ -1,0 +1,25 @@
+.video {
+  width: 184px;
+  height: 180px;
+  border: 1px solid black;
+  color: black;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+  }
+
+  p {
+    margin: 0px;
+  }
+  img {
+    text-align: center;
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    padding: 0.75rem;
+  }
+}

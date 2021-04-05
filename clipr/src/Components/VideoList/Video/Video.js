@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const Video = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+import "./Video.scss";
 
-export default Video
+const Video = ({image}) => {
+  return (
+    <div className="video">
+      <img src={image} />
+      <p>10:00</p>
+      <p>Nice day at the park</p>
+    </div>
+  );
+};
+
+export default Video;

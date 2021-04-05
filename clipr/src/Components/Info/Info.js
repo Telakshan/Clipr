@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { BsCameraVideo } from "react-icons/bs";
 import { FaTasks } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";

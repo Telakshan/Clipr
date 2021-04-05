@@ -4,6 +4,8 @@ import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { BsCameraVideo } from "react-icons/bs";
 import { FaTasks } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { GoComment } from "react-icons/go";
+
 import Button from "../Button/Button";
 
 import "./Info.scss";
@@ -12,42 +14,42 @@ const Info = () => {
   return (
     <div className="page">
       <div className="landing">
-        <h1>Welcome to Flow State</h1>
+        <h1>Welcome to Clipr</h1>
 
         <h3>
-          Powerful project management application to bring your team together
+          Share your Original content with your family, friends or the entire
+          World
         </h3>
 
-        <Link to="/register">
-          <Button>Get Started</Button>
-        </Link>
+        <Button>
+          <Link to="/register">Get Started</Link>
+        </Button>
       </div>
       <div className="info-section">
         <div className="card">
-          <AiOutlineUsergroupAdd className="connect" />
-          <h3>Connect with your team.</h3>
+        <BsCameraVideo className="connect" />
+          <h3>Show your creativity to the world</h3>
           <p>
             <AiFillCheckCircle className="check" />
-            Stay in contact with your team. Communicate with your team through chat. 
+            New and upcoming platform for video discovery and exploration.
           </p>
         </div>
 
         <div className="card">
-          <BsCameraVideo className="connect" />
-          <h3>Connect on a call (Coming soon)</h3>
+          <GoComment className="connect" />
+          <h3>Share your thoughts about user submissions.</h3>
           <p>
             <AiFillCheckCircle className="check" />
-            Effortlessly connect with yout team members while working on
-            projects.
+            Effortlessly connect with fellow Cliprs' and share your insite on videos.
           </p>
         </div>
 
         <div className="card">
           <FaTasks className="connect" />
-          <h3>Collaborate on projects effortlessly</h3>
+          <h3>More features to come</h3>
           <p>
             <AiFillCheckCircle className="check" />
-            All-in-One Workspace for everything related to your work
+            We are continuosly improving the platform and there are many features yet to come.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { FaTasks } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { GoComment } from "react-icons/go";
 
-import Button from "../Button/Button";
+import Button from "../../Components/Button/Button";
 
 import "./Info.scss";
 

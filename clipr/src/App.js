@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
-import Info from "./Components/Info/Info";
+import Info from "./Pages/Info/Info";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import Button from "./Components/Button/Button";
@@ -16,6 +16,7 @@ import Video from "./Components/VideoList/Video/Video";
 import VideoList from "./Components/VideoList/VideoList";
 import Homepage from "./Components/Hompage/Homepage";
 import NewVideo from "./Pages/NewVideo";
+import Help from "./Pages/Info/Help";
 
 function App() {
   const [token, setToken] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/upload" component={NewVideo} />
           <Route exact path="/home" component={Homepage} />
+          <Route exact path='/help' component={Help}/>
         </Switch>
       </Router>
     </AuthContext.Provider>

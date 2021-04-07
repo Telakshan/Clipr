@@ -1,0 +1,27 @@
+.alert-container {
+  border-radius: 5px;
+  padding: 4px;
+  margin-bottom: 10px;
+
+  p {
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+  }
+}
+
+.success {
+  border: 1px solid green;
+
+  p {
+    color: green;
+  }
+}
+
+.error {
+  border: 1px solid red;
+
+  p {
+    color: red;
+  }
+}

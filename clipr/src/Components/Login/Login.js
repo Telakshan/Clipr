@@ -8,6 +8,8 @@ import Button from "../Button/Button";
 //import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import Input from "../Input/Input";
+import Alert from "../Alert/Alert";
+import { login } from "../../Hooks/sendRequest";
 
 import "./Login.scss";
 
@@ -16,10 +18,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-
   const [isLoading, setIsLoading] = useState(false);
- // const [error, setError] = useState(false);
-
   const { email, password } = formData;
 
   // const auth = useContext(AuthContext);
@@ -53,35 +52,22 @@ const Login = () => {
   //   }
   // };
 
+  const submitLogin = async (event) => {
+    event.preventDefault();
+    await login(email, password);
+  };
+
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  // const cancelModal = () => {
-  //   setError(false);
-  // };
-
-  // if (auth.isLoggedIn) {
-  //   return <Chat />;
-  // }
-
   return (
     <div className="log-in">
       {isLoading ? <Loading /> : null}
+      {/* <Alert message="Error logging in..." alertType="success" /> */}
       <MdAccountCircle className="user-icon" />
       <h2 className="title">Log in</h2>
-      {/* {error && (
-        <Modal
-          // className="small-modal"
-          show={setError}
-          header="Log in Error"
-          onCancel={cancelModal}
-          footer={<Button onClick={cancelModal}>Close</Button>}
-        >
-          Cannot log you in. Please try again
-        </Modal>
-      )} onSubmit={submitLogin}*/}
-      <form >
+      <form onSubmit={submitLogin}>
         <Input
           name="email"
           value={email}

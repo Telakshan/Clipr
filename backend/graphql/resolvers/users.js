@@ -109,16 +109,4 @@ module.exports = {
       };
     },
   },
-  // Mutation: {
-  //   async login(_, { loginInput: { email, password } }) {
-  //     const { valid, errors } = validateRegisterInput(email, password);
-  //     if (!valid) {
-  //       throw new UserInputError("Errors", { errors });
-  //     }
-  //     const user = await User.findOne({ email });
-  //     if (!user) {
-  //       throw new UserInputError("User does not exist");
-  //     }
-  //   },
-  // },
 };

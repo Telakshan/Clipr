@@ -1,11 +1,11 @@
 import React from "react";
-
+import {AiOutlineLike} from 'react-icons/ai';
+import {AiOutlineDislike} from 'react-icons/ai';
 import "./VideoPlayer.scss";
 
 const VideoPlayer = () => {
   const embedUrl = "https://www.youtube.com/watch?v=ysz5S6PUM-U";
   return (
-    <div className="video-container">
       <div className="video-content">
         <iframe
           src="https://www.youtube.com/embed/JEiEFhaMVVA"
@@ -15,8 +15,15 @@ const VideoPlayer = () => {
           allowfullscreen
           className='video-player'
         ></iframe>
+        {/* <React.Fragment className='buttons'>
+            <button type='button' className='like'>
+                <AiOutlineLike/>
+            </button>
+            <button type='button' className='unlike'>
+                <AiOutlineDislike/>
+            </button>
+        </React.Fragment> */}
       </div>
-    </div>
   );
 };
 

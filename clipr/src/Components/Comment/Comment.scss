@@ -1,0 +1,13 @@
+.comment{
+    margin-left: 10%;
+    border: 1px solif black;
+    padding: 10px;
+    max-width: 500px;
+    
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .comment{
+        margin-left: 0px;
+    }
+}

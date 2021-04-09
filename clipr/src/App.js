@@ -14,6 +14,7 @@ import Login from "./Components/Login/Login";
 import Button from "./Components/Button/Button";
 import Video from "./Components/VideoList/Video/Video";
 import VideoList from "./Components/VideoList/VideoList";
+import VideoPlayer from './Components/VideoPlayer/VideoPlayer';
 import Homepage from "./Components/Hompage/Homepage";
 import NewVideo from "./Pages/NewVideo";
 import Help from "./Pages/Info/Help";
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/upload" component={NewVideo} />
           <Route exact path="/home" component={Homepage} />
           <Route exact path='/help' component={Help}/>
+          <Route exact path='/video' component={VideoPlayer}/>
         </Switch>
       </Router>
     </AuthContext.Provider>

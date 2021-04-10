@@ -1,0 +1,17 @@
+.comment-form {
+  margin-left: 10%;
+
+  .comment-text {
+    .text-area {
+      width: 30vw;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .comment-form {
+    margin-left: 0px;
+  }
+}

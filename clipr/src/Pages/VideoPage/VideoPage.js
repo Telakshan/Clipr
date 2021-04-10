@@ -1,18 +1,30 @@
-import React from 'react';
-import VideoPlayer from '../../Components/VideoPlayer/VideoPlayer';
-import Comment from '../../Components/Comment/Comment';
-import'./VideoPage.scss';
+import React, { useState } from "react";
+import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
+import Comment from "../../Components/Comment/Comment";
+import CommentForm from "../../Components/Comment/CommentForm";
+import Button from "../../Components/Button/Button";
+
+import "./VideoPage.scss";
+import { Link } from "react-router-dom";
 
 const VideoPage = () => {
-    return (
-        <div className='video-page'>
+  const [comment, addComment] = useState(false);
 
-            <VideoPlayer/>
+  return (
+    <div className="video-page">
+      <VideoPlayer />
+      {comment ? (
+        <>
+          <CommentForm />
+        </>
+      ) : null}
+      <p to="#" className="comment-action" onClick={() => addComment(!comment)}>
+        {comment ? "Cancel" : "Add a comment..."}
+      </p>
 
-            <Comment className='comments'/>
-            
-        </div>
-    )
-}
+      <Comment className="comments" />
+    </div>
+  );
+};
 
-export default VideoPage
+export default VideoPage;

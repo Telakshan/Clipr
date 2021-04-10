@@ -13,8 +13,8 @@ import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import Button from "./Components/Button/Button";
 import Video from "./Components/VideoList/Video/Video";
-import VideoPage from './Pages/VideoPage/VideoPage';
-import VideoPlayer from './Components/VideoPlayer/VideoPlayer';
+import VideoPage from "./Pages/VideoPage/VideoPage";
+import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import Homepage from "./Components/Hompage/Homepage";
 import NewVideo from "./Pages/NewVideo";
 import Help from "./Pages/Info/Help";
@@ -51,8 +51,8 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/upload" component={NewVideo} />
           <Route exact path="/home" component={Homepage} />
-          <Route exact path='/help' component={Help}/>
-          <Route exact path='/video' component={VideoPage}/>
+          <Route exact path="/help" component={Help} />
+          <Route exact path="/video" component={VideoPage} />
         </Switch>
       </Router>
     </AuthContext.Provider>

@@ -10,9 +10,9 @@ const VideoPlayer = () => {
         <iframe
           src="https://www.youtube.com/embed/JEiEFhaMVVA"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
           className='video-player'
         ></iframe>
         {/* <React.Fragment className='buttons'>

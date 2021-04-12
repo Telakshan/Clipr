@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { MdAccountCircle } from "react-icons/md";
 import { AuthContext } from "../../Context/AuthContext";
-import axios from "axios";
 import Loading from "../Loading/Loading";
 //import DashBoard from "../DashBoard/DashBoard";
 import Button from "../Button/Button";

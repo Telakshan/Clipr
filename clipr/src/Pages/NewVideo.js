@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaPlus } from "react-icons/fa";
 import Button from "../Components/Button/Button";
 import Input from "../Components/Input/Input";
-
+import VideoUpload from "../Components/VideoUpload/VideoUpload";
 import "./NewVideo.scss";
 
 const NewVideo = () => {
@@ -20,11 +19,8 @@ const NewVideo = () => {
 
   return (
     <form className="form">
-      <button className="upload">
-        <FaPlus className="fa-plus"/>
-        Select Files
-      </button>
-
+      <h1>Upload a new Video</h1>
+      <VideoUpload errorText="Please select a video" />
       <br />
       <Input
         name="title"

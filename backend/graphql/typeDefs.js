@@ -24,5 +24,15 @@ module.exports = gql`
     register(registerInput: RegisterInput): User!
     login(loginInput: LoginInput): User!
   }
+  type UploadedFileResponse{
+    filename: String!
+    mimetype: String!
+    encoding: String!
+    url: String!
+  }
+
+  type Mutation{
+    singleUpload(file: Upload!): UploadedFileResponse!
+  }
   
 `;

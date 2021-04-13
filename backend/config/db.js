@@ -15,7 +15,7 @@ const connectDB = async () => {
     }catch(error){
         return console.error('error from db', error.message);
     }
-
+    
  
 }
 

@@ -23,16 +23,13 @@ module.exports = gql`
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(loginInput: LoginInput): User!
+    singleUpload(file: Upload!): UploadedFileResponse!
   }
-  type UploadedFileResponse{
+  type UploadedFileResponse {
+    success: String!
     filename: String!
     mimetype: String!
     encoding: String!
     url: String!
   }
-
-  type Mutation{
-    singleUpload(file: Upload!): UploadedFileResponse!
-  }
-  
 `;

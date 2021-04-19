@@ -1,54 +1,54 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Button from "../Button/Button";
 import { MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
-import axios from "axios";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/react-hooks";
 import Input from "../Input/Input";
 //import Modal from "../Modal/Modal";
 import Loading from "../Loading/Loading";
 
 import "./Register.scss";
+import { ValuesOfCorrectTypeRule } from "graphql";
+import Alert from "../Alert/Alert";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const { name, email, password } = formData;
+  const { username, email, password } = formData;
 
   const auth = useContext(AuthContext);
 
-  // const authSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const { name, email, password } = formData;
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
+  const [addUser, { loading }] = useMutation(REGISTER_USER, {
+    update(proxy, result) {
+      console.log(result);
+      setIsLoading(false);
+    },
+    variables: {
+      username: username,
+      email: email,
+      password: password,
+    },
+  });
 
-  //   const body = JSON.stringify({ name, email, password });
-  //   setIsLoading(true);
-  //   try {
-  //     const responseData = await axios.post(
-  //       "http://localhost:5000/api/user/register",
-  //       body,
-  //       config
-  //     );
-  //     auth.login(responseData.data.userId, responseData.data.token);
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     console.error(error, "Register failed");
-  //   }
-  // };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData);
+    setIsLoading(true);
+    addUser();
+  };
 
-  const cancelModal = () => {
-    setError(false);
+  const errorTimeOut = () => {
+    setTimeout(() => {
+      setError(!error);
+    }, 2000);
   };
 
   const handleChange = (event) => {
@@ -57,27 +57,16 @@ const Register = () => {
 
   return (
     <div className="sign-up">
+      {error ?  <Alert message="Register failed" alertType="error" /> : null}
       {isLoading ? <Loading /> : null}
       <MdAccountCircle className="user-icon" />
       <h2 className="title">Sign up</h2>
-      {/* {error && (
-        <Modal
-          // className="small-modal"
-          show={setError}
-          header="Register in Error"
-          onCancel={cancelModal}
-          footer={<Button onClick={cancelModal}>Close</Button>}
-        >
-          Cannot Register. Please try again
-        </Modal>
-      )} */}
-      {/* <form onSubmit={authSubmit}> */}
-      <form>
+      <form onSubmit={onSubmit}>
         <Input
-          name="name"
+          name="username"
           type="text"
-          value={name}
-          label="full name"
+          value={username}
+          label="username"
           onChange={handleChange}
           required
         />
@@ -110,5 +99,18 @@ const Register = () => {
     </div>
   );
 };
+
+const REGISTER_USER = gql`
+  mutation register($username: String!, $email: String!, $password: String!) {
+    register(
+      registerInput: { username: $username, email: $email, password: $password }
+    ) {
+      id
+      email
+      username
+      token
+    }
+  }
+`;
 
 export default Register;

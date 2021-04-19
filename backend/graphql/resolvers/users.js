@@ -69,8 +69,7 @@ module.exports = {
       const { valid, errors } = validateRegisterInput(
         username,
         email,
-        password,
-        confirmPassword
+        password
       );
       if (!valid) {
         throw new UserInputError("Errors", { errors });

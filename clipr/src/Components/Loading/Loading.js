@@ -4,7 +4,7 @@ import "./Loading.css";
 
 const Loading = () => {
   return (
-    <div className="lds-ring as-overlay">
+    <div className="lds-ring as-overlay grid">
       <div></div>
       <div></div>
       <div></div>

@@ -1,11 +1,6 @@
 const validator = require("validator");
 
-module.exports.validateRegisterInput = (
-  username,
-  email,
-  password,
-  confirmPassword
-) => {
+module.exports.validateRegisterInput = (username, email, password) => {
   const errors = {};
 
   if (username.trim() === "") {
@@ -18,8 +13,6 @@ module.exports.validateRegisterInput = (
   }
   if (password.length < 6) {
     errors.password = "Password must be at least 6 characters";
-  } else if (password !== confirmPassword) {
-    errors.password = "Passwords must match";
   }
 
   return {

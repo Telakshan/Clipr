@@ -20,37 +20,6 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { email, password } = formData;
 
-  // const auth = useContext(AuthContext);
-
-  // const submitLogin = async (event) => {
-  //   event.preventDefault();
-  //   const { email, password } = formData;
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
-  //   const body = JSON.stringify({ email, password });
-  //   setIsLoading(true);
-  //   try {
-  //     const responseData = await axios.post(
-  //       "http://localhost:5000/api/user/login",
-  //       body,
-  //       config
-  //     );
-  //     auth.login(responseData.data.userId, responseData.data.token);
-  //     setFormData({
-  //       email: "",
-  //       password: "",
-  //     });
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     setIsLoading(false);
-  //     console.error(error, "Log in failed");
-  //     setError(true);
-  //   }
-  // };
-
   const submitLogin = async (event) => {
     event.preventDefault();
     await login(email, password);
@@ -95,5 +64,7 @@ const Login = () => {
     </div>
   );
 };
+
+
 
 export default Login;
